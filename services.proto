@@ -1,0 +1,19 @@
+// services.proto
+
+syntax = "proto3";
+
+service SentimentAnalysisService {
+  rpc AnalyzeSentiment(TextRequest) returns (SentimentResponse) {}
+}
+
+service TextInputService {
+  rpc ProcessText(TextRequest) returns (SentimentResponse) {}
+}
+
+message TextRequest {
+  string text = 1;
+}
+
+message SentimentResponse {
+  string sentiment = 1;
+}
