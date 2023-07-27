@@ -1,4 +1,3 @@
-# sentiment_analysis_service.py
 import grpc
 import services_pb2
 import services_pb2_grpc
@@ -17,10 +16,7 @@ class SentimentAnalysisService(services_pb2_grpc.SentimentAnalysisServiceService
 
     def AnalyzeSentiment(self, request, context):
         text = request.text
-
-        # 进行情感分析
         sentiment_result = self.sentiment_analysis(text)
-
         return services_pb2.SentimentResponse(sentiment=sentiment_result)
 
     def sentiment_analysis(self, text):

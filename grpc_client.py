@@ -1,4 +1,3 @@
-# grpc_client.py
 import grpc
 import services_pb2
 import services_pb2_grpc
